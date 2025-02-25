@@ -6,12 +6,7 @@ pipeline {
         CONTAINER_NAME = "nodejs-container"
     }
 
-    stages {
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/rajany29/node_basic_project.git'  // Change to your repo
-            }
-        }
+  
 
         stage('Build Docker Image') {
             steps {
