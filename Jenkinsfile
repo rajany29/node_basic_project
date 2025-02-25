@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-repo/nodejs-app.git'  // Change to your repo
+                git 'https://github.com/rajany29/node_basic_project.git'  // Change to your repo
             }
         }
 
