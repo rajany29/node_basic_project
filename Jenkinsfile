@@ -1,20 +1,21 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:18'
+            args '-v /tmp/jenkins-workspace:/var/jenkins_home/workspace'  // Change the workspace path
+        }
+    }
 
     stages {
         stage('Build') {
-            agent{
-                docker {
-                    image 'node:18'
-                }
-            }
             steps {
                 sh '''
                     ls -la
-                    npm -version
-                    node -version
+                    npm --version
+                    node --version
                     npm ci
-                    node server.js
+                    node server.js &
+                    sleep 5
                     ls -la
                 '''
             }
