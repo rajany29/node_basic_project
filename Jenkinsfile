@@ -30,7 +30,7 @@ pipeline {
 
     post {
         success {
-            echo "Node.js app is running at http://localhost:3000"
+            echo "Node.js app is running at http://localhost:5000"
         }
         failure {
             echo "Build failed!"
