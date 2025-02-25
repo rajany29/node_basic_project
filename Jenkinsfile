@@ -6,7 +6,8 @@ pipeline {
         CONTAINER_NAME = "nodejs-container"
     }
 
-  
+    stages {
+        
 
         stage('Build Docker Image') {
             steps {
